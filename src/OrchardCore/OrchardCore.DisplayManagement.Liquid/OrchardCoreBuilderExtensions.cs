@@ -36,11 +36,8 @@ public static class OrchardCoreBuilderExtensions
 
             services.AddSingleton<IConfigureOptions<TemplateOptions>, TemplateOptionsConfigurations>();
 
-
 #pragma warning disable CS0618 // Type or member is obsolete
-            services.AddLiquidFilter<AppendVersionFilter>("append_version")
-                .AddLiquidFilter<ResourceUrlFilter>("resource_url")
-                .AddLiquidFilter<SanitizeHtmlFilter>("sanitize_html")
+            services.AddLiquidFilter<SanitizeHtmlFilter>("sanitize_html")
 
                 // Deprecated, remove in a future version.
                 .AddLiquidFilter<SupportedCulturesFilter>("supported_cultures");
