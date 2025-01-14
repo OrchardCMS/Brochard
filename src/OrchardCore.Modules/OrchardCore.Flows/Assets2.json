@@ -1,0 +1,14 @@
+[
+  {
+    "action": "min",
+    "name": "flows",
+    "source": "Assets/js/flows.edit.js",
+    "tags": ["admin", "dashboard", "js"]
+  },
+  {
+    "action": "sass",
+    "name": "flows",
+    "source": "Assets/scss/flows.edit.scss",
+    "tags": ["admin", "dashboard", "css"]
+  }
+]

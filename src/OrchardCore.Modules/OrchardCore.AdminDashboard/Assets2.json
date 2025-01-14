@@ -1,0 +1,8 @@
+[
+  {
+    "action": "sass",
+    "name": "admin-dashboard",
+    "source": "Assets/scss/dashboard.scss",
+    "tags": ["admin", "dashboard", "css"]
+  }
+]

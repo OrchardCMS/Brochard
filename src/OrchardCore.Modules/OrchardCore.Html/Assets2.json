@@ -1,0 +1,14 @@
+[
+  {
+    "action": "min",
+    "name": "trumbowyg.media.tag",
+    "source": "Assets/trumbowyg.media.tag.js",
+    "tags": ["admin", "dashboard", "js"]
+  },
+  {
+    "action": "min",
+    "name": "trumbowyg.media.url",
+    "source": "Assets/trumbowyg.media.url.js",
+    "tags": ["admin", "dashboard", "js"]
+  }
+]

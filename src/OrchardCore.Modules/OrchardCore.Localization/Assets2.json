@@ -1,0 +1,8 @@
+[
+  {
+    "action": "min",
+    "name": "loc-optionsEditor",
+    "source": "Assets/js/*.js",
+    "tags": ["admin", "dashboard", "js"]
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "action": "sass",
+    "name": "taxonomies-menu",
+    "source": "Assets/scss/menu.scss",
+    "tags": ["admin", "dashboard", "css"]
+  },
+  {
+    "action": "sass",
+    "name": "taxonomies-tags-editor",
+    "source": "Assets/scss/tags-editor.scss",
+    "tags": ["admin", "dashboard", "css"]
+  },
+  {
+    "action": "min",
+    "name": "taxonomies-menu",
+    "source": "Assets/js/menu.js",
+    "tags": ["admin", "dashboard", "js"]
+  },
+  {
+    "action": "min",
+    "name": "taxonomies-activate-links",
+    "source": "Assets/js/activate-links.js",
+    "tags": ["admin", "dashboard", "js"]
+  },
+  {
+    "action": "min",
+    "name": "taxonomies-tags-editor",
+    "source": "Assets/js/tags-editor.js",
+    "tags": ["admin", "dashboard", "js"]
+  }
+]

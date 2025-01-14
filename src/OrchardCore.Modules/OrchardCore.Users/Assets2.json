@@ -1,0 +1,14 @@
+[
+  {
+    "action": "min",
+    "name": "users-password-generator",
+    "source": "Assets/js/password-generator.js",
+    "tags": ["admin", "dashboard", "js"]
+  },
+  {
+    "action": "min",
+    "name": "users-qrcode",
+    "source": "../../../node_modules/qrcodejs/qrcode.js",
+    "tags": ["admin", "dashboard", "js"]
+  }
+]

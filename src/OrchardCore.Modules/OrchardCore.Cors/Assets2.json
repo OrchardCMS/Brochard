@@ -1,0 +1,8 @@
+[
+  {
+    "action": "min",
+    "name": "cors",
+    "source": "Assets/Admin/cors-admin.js",
+    "tags": ["admin", "dashboard", "js"]
+  }
+]

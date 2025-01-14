@@ -1,0 +1,8 @@
+[
+  {
+    "action": "min",
+    "name": "deployment",
+    "source": "Assets/js/steporder.js",
+    "tags": ["admin", "dashboard", "js"]
+  }
+]

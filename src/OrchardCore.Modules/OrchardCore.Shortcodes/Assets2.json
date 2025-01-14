@@ -1,0 +1,21 @@
+[
+  {
+    "action": "sass",
+    "generateRTL": true,
+    "name": "shortcodes",
+    "source": "Assets/scss/shortcodes.scss",
+    "tags": ["admin", "dashboard", "css"]
+  },
+  {
+    "action": "min",
+    "name": "shortcodes",
+    "source": "Assets/js/shortcodes.js",
+    "tags": ["admin", "dashboard", "js"]
+  },
+  {
+    "action": "min",
+    "name": "shortcodes-templates",
+    "source": "Assets/js/shortcode-templates.js",
+    "tags": ["admin", "dashboard", "js"]
+  }
+]

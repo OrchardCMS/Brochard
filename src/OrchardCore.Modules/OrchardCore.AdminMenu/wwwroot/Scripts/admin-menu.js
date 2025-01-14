@@ -429,7 +429,6 @@
       this._sort_current = this.domPosition.prev ? $(this.domPosition.prev).next().index() : 0;
       $.ui.sortable.prototype._mouseStop.apply(this, arguments); //asybnchronous execution, @see _clear for the relocate event.
     },
-
     // mjs - this function is slightly modified
     // to make it easier to hover over a collapsed element and have it expand
     _intersectsWithSides: function _intersectsWithSides(item) {
@@ -497,7 +496,6 @@
         if (data.nestedSortableItem) {
           delete data.nestedSortableItem; // Remove the nestedSortableItem object from the data
         }
-
         if (id) {
           currentItem = {
             "id": id[2]
@@ -549,7 +547,7 @@
           });
           depth--;
         }
-        id = ($(item).attr(o.attribute || "id") || "").match(o.expression || /(.+)[-=_](.+)/);
+        id = $(item).attr(o.attribute || "id").match(o.expression || /(.+)[-=_](.+)/);
         if (depth === sDepth) {
           pid = o.rootID;
         } else {
@@ -557,15 +555,15 @@
           pid = parentItem[2];
         }
         if (id) {
-          var data = $(item).children('div').data();
-          var itemObj = $.extend(data, {
+          var name = $(item).data("name");
+          ret.push({
             "id": id[2],
             "parent_id": pid,
             "depth": depth,
             "left": _left,
-            "right": right
+            "right": right,
+            "name": name
           });
-          ret.push(itemObj);
         }
         _left = right + 1;
         return _left;
@@ -580,13 +578,15 @@
       }
       var o = this.options,
         childrenList = $(item).children(o.listType),
-        hasChildren = childrenList.has('li').length;
+        hasChildren = childrenList.is(':not(:empty)');
       var doNotClear = o.doNotClear || hasChildren || o.protectRoot && $(item)[0] === this.element[0];
       if (o.isTree) {
         replaceClass(item, o.branchClass, o.leafClass, doNotClear);
+        if (doNotClear && hasChildren) {
+          replaceClass(item, o.collapsedClass, o.expandedClass);
+        }
       }
       if (!doNotClear) {
-        childrenList.parent().removeClass(o.expandedClass);
         childrenList.remove();
       }
     },
