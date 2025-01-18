@@ -74,15 +74,15 @@ public class EmailTask : TaskActivity<EmailTask>
         set => SetProperty(value);
     }
 
-    public WorkflowExpression<string> Body
+    public WorkflowExpression<string> TextBody
     {
         get => GetProperty(() => new WorkflowExpression<string>());
         set => SetProperty(value);
     }
 
-    public bool IsHtmlBody
+    public WorkflowExpression<string> HtmlBody
     {
-        get => GetProperty(() => true);
+        get => GetProperty(() => new WorkflowExpression<string>());
         set => SetProperty(value);
     }
 
@@ -100,7 +100,8 @@ public class EmailTask : TaskActivity<EmailTask>
         var cc = await _expressionEvaluator.EvaluateAsync(Cc, workflowContext, null);
         var bcc = await _expressionEvaluator.EvaluateAsync(Bcc, workflowContext, null);
         var subject = await _expressionEvaluator.EvaluateAsync(Subject, workflowContext, null);
-        var body = await _expressionEvaluator.EvaluateAsync(Body, workflowContext, IsHtmlBody ? _htmlEncoder : null);
+        var textBody = await _expressionEvaluator.EvaluateAsync(TextBody, workflowContext, null);
+        var htmlBody = await _expressionEvaluator.EvaluateAsync(HtmlBody, workflowContext, _htmlEncoder);
 
         var message = new MailMessage
         {
@@ -112,8 +113,11 @@ public class EmailTask : TaskActivity<EmailTask>
             // Email reply-to header https://tools.ietf.org/html/rfc4021#section-2.1.4
             ReplyTo = replyTo?.Trim(),
             Subject = subject?.Trim(),
-            Body = body?.Trim(),
-            IsHtmlBody = IsHtmlBody
+            Body = new MailMessageBody
+            {
+                PlainText = textBody?.Trim(),
+                Html = htmlBody?.Trim()
+            }
         };
 
         if (!string.IsNullOrWhiteSpace(sender))
