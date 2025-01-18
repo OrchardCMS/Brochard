@@ -18,6 +18,7 @@
   <ItemGroup>
     <PackageReference Include="JsonPath.Net" />
     <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" />
+    <PackageReference Include="Ulid" />
     <PackageReference Include="ZString" />
   </ItemGroup>
 
