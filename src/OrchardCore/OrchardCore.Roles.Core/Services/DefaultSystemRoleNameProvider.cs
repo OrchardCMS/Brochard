@@ -4,7 +4,9 @@ using OrchardCore.Environment.Shell;
 
 namespace OrchardCore.Roles;
 
+#pragma warning disable CS0618 // Type or member is obsolete
 internal sealed class DefaultSystemRoleNameProvider : ISystemRoleNameProvider
+#pragma warning restore CS0618 // Type or member is obsolete
 {
     private readonly string _adminRoleName;
 
